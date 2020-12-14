@@ -123,9 +123,9 @@ namespace RuntimeGizmos
 
 		//We use a HashSet and a List for targetRoots so that we get fast lookup with the hashset while also keeping track of the order with the list.
 		public List<Transform> targetRootsOrdered = new List<Transform>();
-		Dictionary<Transform, TargetInfo> targetRoots = new Dictionary<Transform, TargetInfo>();
+		public Dictionary<Transform, TargetInfo> targetRoots = new Dictionary<Transform, TargetInfo>();
 		HashSet<Renderer> highlightedRenderers = new HashSet<Renderer>();
-		HashSet<Transform> children = new HashSet<Transform>();
+		public HashSet<Transform> children = new HashSet<Transform>();
 
 		List<Transform> childrenBuffer = new List<Transform>();
 		List<Renderer> renderersBuffer = new List<Renderer>();

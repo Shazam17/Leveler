@@ -5,19 +5,22 @@ using RuntimeGizmos;
 
 public class mergeObjects : MonoBehaviour
 {
-   bool clickStage = false;
 
     public TransformGizmo gizmo;
     public GameObject game;
-    Transform first;
 
     public void OnClick()
     {
+        Debug.Log(gizmo);
         var root = Instantiate(game);
-        foreach(var item in gizmo.targetRootsOrdered)
+        root.transform.position = gizmo.targetRootsOrdered[0].position;
+
+       for(int i = 0; i < gizmo.targetRootsOrdered.Count; i++)
         {
-            item.parent = root.transform;
+            gizmo.targetRootsOrdered[i].parent = root.transform;
         }
+
+       
     }
 
 }
